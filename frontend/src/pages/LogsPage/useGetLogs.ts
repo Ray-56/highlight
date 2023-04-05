@@ -1,6 +1,5 @@
 import { useGetLogsErrorObjectsQuery, useGetLogsLazyQuery } from '@graph/hooks'
-import { LogEdge, PageInfo } from '@graph/schemas'
-import * as Types from '@graph/schemas'
+import { ErrorObject,LogDirection,LogEdge, PageInfo } from '@graph/schemas'
 import { FORMAT } from '@pages/LogsPage/constants'
 import {
 	buildLogsQueryForServer,
@@ -11,7 +10,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 export type LogEdgeWithError = LogEdge & {
 	error_object?: Pick<
-		Types.ErrorObject,
+		ErrorObject,
 		'log_cursor' | 'error_group_secure_id' | 'id'
 	>
 }
@@ -22,12 +21,14 @@ export const useGetLogs = ({
 	logCursor,
 	startDate,
 	endDate,
+	direction,
 }: {
 	query: string
 	project_id: string | undefined
 	logCursor: string | undefined
 	startDate: Date
 	endDate: Date
+	direction: LogDirection
 }) => {
 	// The backend can only tell us page info about a single page.
 	// It has no idea what pages have already been loaded.
@@ -53,7 +54,7 @@ export const useGetLogs = ({
 			variables: {
 				project_id: project_id!,
 				at: logCursor,
-				direction: Types.LogDirection.Desc,
+				direction,
 				params: {
 					query: serverQuery,
 					date_range: {

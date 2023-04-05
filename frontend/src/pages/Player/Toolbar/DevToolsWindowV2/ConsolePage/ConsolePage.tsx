@@ -53,7 +53,7 @@ export const ConsolePage = ({
 			project_id: projectId,
 			direction: Types.LogDirection.Asc,
 			params: {
-				query: `secure_session_id:${session_secure_id}`,
+				query: `secure_session_id:${session_secure_id} source:frontend`,
 				date_range: {
 					end_date: moment(startDate).add(4, 'hours').format(FORMAT),
 					start_date: moment(startDate).format(FORMAT),

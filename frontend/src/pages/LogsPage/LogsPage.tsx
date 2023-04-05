@@ -1,4 +1,4 @@
-import { LogLevel } from '@graph/schemas'
+import { LogDirection, LogLevel } from '@graph/schemas'
 import { Box } from '@highlight-run/ui'
 import {
 	fifteenMinutesAgo,
@@ -82,6 +82,7 @@ const LogsPageInner = ({ timeMode, logCursor, startDateDefault }: Props) => {
 		logCursor,
 		startDate,
 		endDate,
+		direction: LogDirection.Desc,
 	})
 
 	const handleDatesChange = (newStartDate: Date, newEndDate: Date) => {
