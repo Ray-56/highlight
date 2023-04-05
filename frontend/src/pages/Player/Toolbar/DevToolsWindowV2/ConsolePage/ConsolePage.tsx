@@ -45,7 +45,8 @@ export const ConsolePage = ({
 	>([])
 	const { session_secure_id } = useParams<{ session_secure_id: string }>()
 
-	const endDate = session?.created_at ?? Date.now()
+	const now = Date.now()
+	const startDate = session?.created_at ?? moment(now)
 
 	const { data, loading } = useGetLogsQuery({
 		variables: {
@@ -54,15 +55,13 @@ export const ConsolePage = ({
 			params: {
 				query: `secure_session_id:${session_secure_id}`,
 				date_range: {
-					end_date: moment(endDate).format(FORMAT),
-					start_date: moment(endDate)
-						.subtract(4, 'hours')
-						.format(FORMAT),
+					end_date: moment(startDate).add(4, 'hours').format(FORMAT),
+					start_date: moment(startDate).format(FORMAT),
 				},
 			},
 		},
 		fetchPolicy: 'no-cache',
-		skip: !session_secure_id, // Skip if there is a URL to fetch messages
+		skip: !session_secure_id,
 	})
 
 	useEffect(() => {
