@@ -8,6 +8,7 @@ import (
 	"time"
 
 	"github.com/highlight-run/highlight/backend/clickhouse"
+	modelInputs "github.com/highlight-run/highlight/backend/private-graph/graph/model"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -105,6 +106,14 @@ func makeRandomTraceID() string {
 	return spanIDs[rand.Intn(len(spanIDs))]
 }
 
+func makeRandomSource() string {
+	spanIDs := []string{
+		modelInputs.LogSourceBackend.String(),
+		modelInputs.LogSourceFrontend.String(),
+	}
+	return spanIDs[rand.Intn(len(spanIDs))]
+}
+
 func makeRandomSpanID() string {
 	spanIDs := [6]string{
 		"",
@@ -151,6 +160,7 @@ func main() {
 			Body:          fmt.Sprintf("Body %d", i),
 			LogAttributes: makeRandLogAttributes(),
 			SeverityText:  makeRandomSeverityText(),
+			Source:        makeRandomSource(),
 		})
 		err = client.BatchWriteLogRows(context.Background(), logRows)
 
