@@ -28,7 +28,7 @@ services:
         ports:
             - 6381:6379
         volumes:
-            - /Users/ray/developer/github/highlight-data/redis-data:/data
+            - /home/admin/highlight-data/highlight-data/redis-data:/data
         command:
             - redis-server
             - --save 60 1
@@ -42,7 +42,7 @@ services:
         environment:
             POSTGRES_HOST_AUTH_METHOD: trust
         volumes:
-            - /Users/ray/developer/github/highlight-data/postgres-data:/var/lib/postgresql/data
+            - /home/admin/highlight-data/highlight-data/postgres-data:/var/lib/postgresql/data
             - ../scripts/migrations/init.sql:/root/init.sql
         healthcheck:
             test: ['CMD-SHELL', 'pg_isready -U postgres']
@@ -57,8 +57,8 @@ services:
             - 8123:8123
             - 9002:9000
         volumes:
-            - /Users/ray/developer/github/highlight-data/clickhouse-data:/var/lib/clickhouse
-            - /Users/ray/developer/github/highlight-data/clickhouse-logs:/var/log/clickhouse-server
+            - /home/admin/highlight-data/highlight-data/clickhouse-data:/var/lib/clickhouse
+            - /home/admin/highlight-data/highlight-data/clickhouse-logs:/var/log/clickhouse-server
 
     opensearch:
         container_name: opensearch
@@ -72,7 +72,7 @@ services:
             DISABLE_INSTALL_DEMO_CONFIG: true
             DISABLE_SECURITY_PLUGIN: true
         volumes:
-            - /Users/ray/developer/github/highlight-data/opensearch-data:/usr/share/opensearch/data
+            - /home/admin/highlight-data/highlight-data/opensearch-data:/usr/share/opensearch/data
         healthcheck:
             test:
                 [
@@ -94,7 +94,7 @@ services:
         ports:
             - 8086:8086
         volumes:
-            - /Users/ray/developer/github/highlight-data/influxdb-data:/var/lib/influxdb
+            - /home/admin/highlight-data/highlight-data/influxdb-data:/var/lib/influxdb
         healthcheck:
             test: ['CMD', 'curl', '-f', 'http://localhost:8086/ping']
             start_period: 180s
