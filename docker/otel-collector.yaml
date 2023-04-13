@@ -2,9 +2,9 @@ receivers:
     otlp:
         protocols:
             grpc:
-                endpoint: '0.0.0.0:4317'
+                endpoint: '0.0.0.0:4320'
             http:
-                endpoint: '0.0.0.0:4318'
+                endpoint: '0.0.0.0:4321'
 exporters:
     otlphttp:
         endpoint: 'https://host.docker.internal:8082/otel'

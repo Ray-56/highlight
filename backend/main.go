@@ -230,7 +230,7 @@ func main() {
 	if util.IsDevOrTestEnv() {
 		log.WithContext(ctx).Info("overwriting highlight-go graphql / otlp client address...")
 		H.SetGraphqlClientAddress("https://localhost:8082/public")
-		H.SetOTLPEndpoint("http://localhost:4318")
+		H.SetOTLPEndpoint("http://localhost:4321")
 	}
 	H.Start()
 	defer H.Stop()

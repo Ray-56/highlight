@@ -18,7 +18,7 @@ import {
 } from '@opentelemetry/sdk-trace-base'
 import { NodeSDK } from '@opentelemetry/sdk-node'
 
-const OTLP_HTTP = 'https://otel.highlight.io:4318'
+const OTLP_HTTP = 'https://otel.highlight.io:4321'
 
 export class Highlight {
 	readonly FLUSH_TIMEOUT = 10

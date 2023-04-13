@@ -7,7 +7,7 @@ require "logger"
 module Highlight
     class H
         HIGHLIGHT_REQUEST_HEADER = "X-Highlight-Request"
-        OTLP_HTTP = "https://otel.highlight.io:4318"
+        OTLP_HTTP = "https://otel.highlight.io:4321"
         HIGHLIGHT_PROJECT_ATTRIBUTE = "highlight.project_id"
         HIGHLIGHT_SESSION_ATTRIBUTE = "highlight.session_id"
         HIGHLIGHT_TRACE_ATTRIBUTE = "highlight.trace_id"

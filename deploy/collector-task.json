@@ -7,16 +7,16 @@
 			"cpu": 0,
 			"portMappings": [
 				{
-					"name": "highlight-collector-4317-tcp",
-					"containerPort": 4317,
-					"hostPort": 4317,
+					"name": "highlight-collector-4320-tcp",
+					"containerPort": 4320,
+					"hostPort": 4320,
 					"protocol": "tcp",
 					"appProtocol": "grpc"
 				},
 				{
-					"name": "highlight-collector-4318-tcp",
-					"containerPort": 4318,
-					"hostPort": 4318,
+					"name": "highlight-collector-4321-tcp",
+					"containerPort": 4321,
+					"hostPort": 4321,
 					"protocol": "tcp",
 					"appProtocol": "http2"
 				},

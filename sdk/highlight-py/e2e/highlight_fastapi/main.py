@@ -9,7 +9,7 @@ from highlight_io.integrations.fastapi import FastAPIMiddleware
 H = highlight_io.H(
     "1",
     record_logs=True,
-    otlp_endpoint="http://localhost:4318",
+    otlp_endpoint="http://localhost:4321",
 )
 
 app = FastAPI()

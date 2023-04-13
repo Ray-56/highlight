@@ -7,12 +7,12 @@ def main():
         {
             "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:173971919437:targetgroup/opentelemetry-group-grpc/df4aad67f5efdd7a",
             "containerName": "highlight-collector",
-            "containerPort": 4317
+            "containerPort": 4320
         },
         {
             "targetGroupArn": "arn:aws:elasticloadbalancing:us-east-2:173971919437:targetgroup/opentelemetry-group-http/ab4e710c0fdc140d",
             "containerName": "highlight-collector",
-            "containerPort": 4318
+            "containerPort": 4321
         }
     ])
 

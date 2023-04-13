@@ -18,7 +18,7 @@ import (
 	"go.opentelemetry.io/otel/trace"
 )
 
-const OTLPDefaultEndpoint = "https://otel.highlight.io:4318"
+const OTLPDefaultEndpoint = "https://otel.highlight.io:4321"
 
 const ErrorURLAttribute = "URL"
 
