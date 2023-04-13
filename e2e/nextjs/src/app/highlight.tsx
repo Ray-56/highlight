@@ -14,7 +14,7 @@ H.init('1jdkoe52', {
 	},
 	tracingOrigins: true,
 	scriptUrl: 'http://localhost:8080/dist/index.js',
-	backendUrl: 'https://localhost:8082/public',
+	backendUrl: 'https://localhost:8083/public',
 })
 
 const Highlight = () => {

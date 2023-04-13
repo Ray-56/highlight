@@ -79,9 +79,9 @@
 			},
 			"portMappings": [
 				{
-					"hostPort": 8082,
+					"hostPort": 8083,
 					"protocol": "tcp",
-					"containerPort": 8082
+					"containerPort": 8083
 				}
 			],
 			"command": [

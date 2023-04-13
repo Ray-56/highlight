@@ -1,14 +1,14 @@
 services:
     zookeeper:
         image: confluentinc/cp-zookeeper:7.3.0
-        container_name: zookeeper
+        container_name: zookeeper_highlight
         environment:
             ZOOKEEPER_CLIENT_PORT: 2181
             ZOOKEEPER_TICK_TIME: 2000
 
     kafka:
         image: confluentinc/cp-kafka:7.3.0
-        container_name: kafka
+        container_name: kafka_highlight
         ports:
             - 9092:9092
         depends_on:
@@ -23,7 +23,7 @@ services:
             KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
 
     redis:
-        container_name: redis
+        container_name: redis_highlight
         image: redis
         ports:
             - 6381:6379

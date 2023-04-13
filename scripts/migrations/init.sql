@@ -15,7 +15,7 @@ INSERT INTO projects (id, created_at, updated_at, deleted_at, name, stripe_custo
                       rage_click_window_seconds, rage_click_radius_pixels, rage_click_count)
 VALUES (1, '2022-09-13 01:22:35.758964 +00:00', '2022-09-14 05:00:53.763444 +00:00', null, 'p1', null, null, null,
         'swag@highlight.run', 'ccftmmv6i1e1m780kh20', null, null, 1, false, null, null,
-        '{pri.highlight.run,pub.highlight.run,localhost:8082}', true, 5, 8, 5);
+        '{pri.highlight.run,pub.highlight.run,localhost:8083}', true, 5, 8, 5);
 
 INSERT INTO admins (id, created_at, updated_at, deleted_at, name, first_name, last_name, hubspot_contact_id, email,
                     about_you_details_filled, phone, number_of_sessions_viewed, email_verified, photo_url, uid,

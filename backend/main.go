@@ -220,7 +220,7 @@ func validateOrigin(_ *http.Request, origin string) bool {
 	return false
 }
 
-var defaultPort = "8082"
+var defaultPort = "8083"
 
 func main() {
 	ctx := context.TODO()
@@ -229,7 +229,7 @@ func main() {
 	H.SetProjectID("1jdkoe52")
 	if util.IsDevOrTestEnv() {
 		log.WithContext(ctx).Info("overwriting highlight-go graphql / otlp client address...")
-		H.SetGraphqlClientAddress("https://localhost:8082/public")
+		H.SetGraphqlClientAddress("https://localhost:8083/public")
 		H.SetOTLPEndpoint("http://localhost:4321")
 	}
 	H.Start()

@@ -1,2 +1,2 @@
 // Mock consts:* imports provided via rollup-plugin-consts
-vi.mock('consts:publicGraphURI', () => ({ default: 'localhost:8082' }))
+vi.mock('consts:publicGraphURI', () => ({ default: 'localhost:8083' }))
