@@ -1,6 +1,7 @@
 #!/bin/bash -ex
 
-source env.sh
+# source env.sh
+./env.sh
 
 # install frontend dependencies
 yarn

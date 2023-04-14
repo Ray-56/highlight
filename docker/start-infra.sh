@@ -1,6 +1,7 @@
 #!/bin/bash -ex
 
-source env.sh
+# source env.sh
+./env.sh
 
 # startup the infra
 docker compose up --pull missing --build --detach --wait --remove-orphans
